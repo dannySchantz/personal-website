@@ -22,13 +22,13 @@ export default function Contact() {
               
               <div className="space-y-4">
                 <a
-                  href="mailto:danny.schantz@ufl.edu"
+                  href="mailto:dannyschantz1@icloud.com"
                   className="flex items-center gap-4 text-gray-400 hover:text-primary-400 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center group-hover:bg-primary-500/20 transition-colors">
                     <Mail className="w-5 h-5 text-primary-400" />
                   </div>
-                  <span>danny.schantz@ufl.edu</span>
+                  <span>dannyschantz1@icloud.com</span>
                 </a>
                 
                 <div className="flex items-center gap-4 text-gray-400">
@@ -126,7 +126,7 @@ export default function Contact() {
             </form>
             
             <p className="text-gray-500 text-xs mt-4 text-center">
-              Or email me directly at danny.schantz@ufl.edu
+              Or email me directly at dannyschantz1@icloud.com
             </p>
           </div>
         </div>
