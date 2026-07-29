@@ -1,6 +1,6 @@
 'use client';
 
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronDown, FileText } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -54,7 +54,7 @@ export default function Hero() {
             <Linkedin className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
           </a>
           <a
-            href="mailto:danny.schantz@ufl.edu"
+            href="mailto:dannyschantz1@icloud.com"
             className="p-3 glass rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-110 group"
             aria-label="Email"
           >
@@ -69,6 +69,14 @@ export default function Hero() {
             className="px-8 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg shadow-primary-500/25"
           >
             View My Work
+          </a>
+          <a
+            href="/DanielSchantz_Resume.pdf"
+            download
+            className="px-8 py-3 glass text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
+          >
+            <FileText className="w-4 h-4" />
+            Download Resume
           </a>
           <a
             href="#contact"
