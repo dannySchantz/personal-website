@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://dannyschantz.com'),
   title: 'Danny Schantz | Nuclear Engineering Researcher & Developer',
   description: 'Personal portfolio of Danny Schantz - Nuclear Engineering Graduate Student at University of Florida, specializing in Physics-Informed Neural Networks and Plasma Physics.',
   keywords: ['Danny Schantz', 'Nuclear Engineering', 'Machine Learning', 'Physics-Informed Neural Networks', 'Plasma Physics', 'University of Florida'],
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     title: 'Danny Schantz | Nuclear Engineering Researcher & Developer',
     description: 'Personal portfolio of Danny Schantz - Nuclear Engineering Graduate Student at University of Florida.',
     type: 'website',
+    url: 'https://dannyschantz.com',
   },
 };
 
