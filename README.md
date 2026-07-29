@@ -59,14 +59,18 @@ npm run start
 # The static files will be in the 'out' directory
 ```
 
-## Deployment
+## Deployment (dannyschantz.com)
 
-This site is configured for static export and can be deployed to:
+### Deploy to Vercel
 
-- **GitHub Pages**: Push to a `gh-pages` branch
-- **Vercel**: Connect your repository for automatic deployments
-- **Netlify**: Drag and drop the `out` folder or connect your repo
-- **Any static host**: Upload the contents of `out` folder
+1. Go to [vercel.com/new](https://vercel.com/new) and import `dannySchantz/personal-website`
+2. Click **Deploy** (Vercel auto-detects Next.js)
+3. After deploy, open the project → **Settings** → **Domains**
+4. Add `dannyschantz.com` and `www.dannyschantz.com`
+5. If you bought the domain on Vercel, DNS is usually configured automatically
+6. Point the primary domain to `dannyschantz.com` (redirect `www` if you prefer)
+
+Production site: [https://dannyschantz.com](https://dannyschantz.com)
 
 ## Customization
 
