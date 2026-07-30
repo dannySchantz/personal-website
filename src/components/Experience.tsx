@@ -56,9 +56,10 @@ const education = [
     organization: 'Calvin University',
     period: 'Aug 2021 – May 2025',
     description: [
-      'GPA: 3.5',
-      'Strong foundation in thermodynamics and transport phenomena',
-      'Background in mathematical modeling and computational methods',
+      'GPA: 3.47',
+      'Strong foundation in thermodynamics, transport phenomena, and unit operations',
+      'Coursework in reaction engineering, process design, and experimental laboratory methods',
+      'Served as a student supervisor, mentoring peers and building leadership experience',
     ],
   },
 ];
@@ -96,8 +97,16 @@ function TimelineItem({
         
         <ul className="space-y-2">
           {item.description.map((point, idx) => (
-            <li key={idx} className="flex items-start gap-3 text-gray-400">
-              <span className="text-primary-500 mt-1.5">▹</span>
+            <li
+              key={idx}
+              className="grid grid-cols-[1rem_minmax(0,1fr)] gap-x-3 text-gray-400 leading-relaxed"
+            >
+              <span
+                className="text-primary-500 text-center leading-relaxed select-none"
+                aria-hidden="true"
+              >
+                ▹
+              </span>
               <span>{point}</span>
             </li>
           ))}

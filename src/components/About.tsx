@@ -21,7 +21,7 @@ const highlights = [
   {
     icon: FlaskConical,
     title: 'Research',
-    description: 'Investigating Dreicer generation mechanisms and electron formation rates',
+    description: 'Modeling runaway electron dynamics and formation rates in fusion plasmas',
   },
 ];
 
@@ -69,9 +69,9 @@ export default function About() {
             </p>
 
             <p className="text-gray-300 text-lg leading-relaxed">
-              My work combines deep expertise in plasma physics with cutting-edge machine learning
-              techniques to predict primary runaway electron formation rates and model Dreicer
-              generation mechanisms.
+              My work combines plasma physics with machine learning to model runaway electron
+              dynamics — including Dreicer generation and primary formation rates — inside a
+              unified PINN framework.
             </p>
 
             <div className="pt-4">

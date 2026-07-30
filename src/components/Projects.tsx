@@ -27,8 +27,16 @@ const projects: Project[] = [
   {
     title: 'Physics-Informed Neural Networks for Plasma Physics',
     description:
-      'Developing PINNs to solve the relativistic Fokker-Planck equation for modeling runaway electron dynamics in fusion plasmas. Utilizes PyTorch and HiPerGator HPC for large-scale training.',
-    tags: ['Python', 'PyTorch', 'HPC', 'Physics', 'Deep Learning'],
+      'Developing PINNs to solve the relativistic Fokker-Planck equation for runaway electron dynamics in fusion plasmas, including Dreicer generation and primary formation-rate modeling. Training at scale on UF HiPerGator with PyTorch.',
+    tags: [
+      'Python',
+      'PyTorch',
+      'HPC',
+      'Deep Learning',
+      'Machine Learning',
+      'Plasma Physics',
+      'Numerical Methods',
+    ],
     github: null,
     external: null,
     href: null,
@@ -43,16 +51,6 @@ const projects: Project[] = [
     external: null,
     href: null,
     featured: true,
-  },
-  {
-    title: 'Dreicer Generation Modeling',
-    description:
-      'Deep learning workflows designed to accurately model Dreicer generation mechanisms and predict primary runaway electron formation rates in plasma systems.',
-    tags: ['Machine Learning', 'Plasma Physics', 'Numerical Methods'],
-    github: null,
-    external: null,
-    href: null,
-    featured: false,
   },
   {
     title: 'Full-Stack Web Application',

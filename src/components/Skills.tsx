@@ -3,15 +3,15 @@
 const skillCategories = [
   {
     title: 'Programming Languages',
-    skills: ['Python', 'JavaScript', 'TypeScript', 'MATLAB', 'C++'],
+    skills: ['Python', 'JavaScript', 'TypeScript', 'MATLAB'],
   },
   {
     title: 'Machine Learning & AI',
-    skills: ['PyTorch', 'TensorFlow', 'Physics-Informed Neural Networks', 'Deep Learning', 'Predictive Analytics'],
+    skills: ['PyTorch', 'Physics-Informed Neural Networks', 'Deep Learning'],
   },
   {
     title: 'Scientific Computing',
-    skills: ['Numerical Methods', 'HPC (HiPerGator)', 'Plasma Physics Simulations', 'Fokker-Planck Solvers', 'Parallel Computing'],
+    skills: ['Numerical Methods', 'HPC (HiPerGator)', 'Plasma Physics Simulations', 'Parallel Computing'],
   },
   {
     title: 'Domain Expertise',
@@ -23,7 +23,7 @@ const skillCategories = [
   },
   {
     title: 'Soft Skills',
-    skills: ['Technical Writing', 'Research', 'Problem Solving', 'Presentation', 'Collaboration'],
+    skills: ['Leadership', 'Technical Writing', 'Research', 'Problem Solving', 'Presentation', 'Collaboration'],
   },
 ];
 
