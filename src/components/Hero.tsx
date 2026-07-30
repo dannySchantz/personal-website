@@ -1,6 +1,6 @@
 'use client';
 
-import { Github, Linkedin, Mail, ChevronDown, FileText } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronDown, FileText, Briefcase } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -64,8 +64,9 @@ export default function Hero() {
         <div className="flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
           <a
             href="#projects"
-            className="rounded-lg bg-primary-500 px-6 py-3 text-center text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-primary-400 sm:px-8 sm:text-base"
+            className="flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium text-white glass transition-all duration-300 hover:bg-white/10 sm:px-8 sm:text-base"
           >
+            <Briefcase className="h-4 w-4" />
             View My Work
           </a>
           <a
@@ -75,12 +76,6 @@ export default function Hero() {
           >
             <FileText className="h-4 w-4" />
             Download Resume
-          </a>
-          <a
-            href="#contact"
-            className="rounded-lg px-6 py-3 text-center text-sm font-medium text-white glass transition-all duration-300 hover:bg-white/10 sm:px-8 sm:text-base"
-          >
-            Get In Touch
           </a>
         </div>
       </div>
