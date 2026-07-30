@@ -27,6 +27,8 @@ A modern, responsive personal portfolio website built with Next.js, TypeScript, 
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Lucide React](https://lucide.dev/) - Beautiful, consistent icons
 
+## Now you can make your own personal portfolio!
+
 ## Getting Started
 
 ### Prerequisites
@@ -59,16 +61,16 @@ npm run start
 # The static files will be in the 'out' directory
 ```
 
-## Deployment (dannyschantz.com)
+## Deployment 
 
 ### Deploy to Vercel
 
-1. Go to [vercel.com/new](https://vercel.com/new) and import `dannySchantz/personal-website`
+1. Go to [vercel.com/new](https://vercel.com/new) and import `yourGitHub/your-repo`
 2. Click **Deploy** (Vercel auto-detects Next.js)
 3. After deploy, open the project → **Settings** → **Domains**
-4. Add `dannyschantz.com` and `www.dannyschantz.com`
+4. Add `website.com` and `www.website.com`
 5. If you bought the domain on Vercel, DNS is usually configured automatically
-6. Point the primary domain to `dannyschantz.com` (redirect `www` if you prefer)
+6. Point the primary domain to `website.com` (redirect `www` if you prefer)
 
 Production site: [https://dannyschantz.com](https://dannyschantz.com)
 
