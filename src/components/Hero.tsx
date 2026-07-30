@@ -22,7 +22,7 @@ export default function Hero() {
         </h1>
 
         <h2 className="mb-4 text-lg font-light text-gray-300 sm:mb-8 sm:text-xl md:text-2xl lg:text-3xl">
-          Nuclear Engineering Researcher & Machine Learning Developer
+          Nuclear Engineering Student & Machine Learning Researcher
         </h2>
 
         <p className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-gray-400 sm:mb-10 sm:text-lg md:text-xl">
@@ -64,7 +64,7 @@ export default function Hero() {
         <div className="flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
           <a
             href="#projects"
-            className="rounded-lg bg-gradient-to-r from-primary-500 to-accent-500 px-6 py-3 text-center text-sm font-medium text-white shadow-lg shadow-primary-500/25 transition-all duration-300 hover:scale-105 hover:opacity-90 sm:px-8 sm:text-base"
+            className="rounded-lg bg-primary-500 px-6 py-3 text-center text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-primary-400 sm:px-8 sm:text-base"
           >
             View My Work
           </a>
