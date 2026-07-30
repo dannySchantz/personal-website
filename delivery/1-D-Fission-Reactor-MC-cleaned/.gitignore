@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+
+# Numba / tooling caches
+.numba_cache*/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Generated simulation output (keep the folder via .gitkeep)
+results/**
+!results/.gitkeep
+
+# Local scratch plot folders created by analysis scripts
+*_output/
+fd_verification_output/
+part2b_output/
+fd_run_output/
+simulation_runs/
+*.npz
+*.meta.json
