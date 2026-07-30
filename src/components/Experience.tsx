@@ -114,8 +114,8 @@ export default function Experience() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-950/20 to-transparent pointer-events-none" />
       
       <div className="max-w-4xl mx-auto relative">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Experience & <span className="text-gradient">Education</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gradient mb-4">
+          Experience & Education
         </h2>
         <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
           My academic and professional journey in nuclear engineering and computational research
