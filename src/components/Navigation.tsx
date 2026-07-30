@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Skills', href: '/#skills' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Navigation() {
@@ -31,7 +31,7 @@ export default function Navigation() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <a
-          href="#"
+          href="/"
           className="text-xl font-bold text-gradient hover:opacity-80 transition-opacity"
         >
           DS

@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo/Name */}
           <div className="text-center md:text-left">
-            <a href="#" className="text-2xl font-bold text-gradient">
+            <a href="/" className="text-2xl font-bold text-gradient">
               Danny Schantz
             </a>
             <p className="text-gray-500 text-sm mt-1">

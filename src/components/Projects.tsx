@@ -1,8 +1,29 @@
 'use client';
 
-import { ExternalLink, Github, Folder } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { ExternalLink, Github, Folder, ArrowRight } from 'lucide-react';
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  github: string | null;
+  external: string | null;
+  href: string | null;
+  featured: boolean;
+};
+
+const projects: Project[] = [
+  {
+    title: '1-D Fission Reactor Monte Carlo',
+    description:
+      'Multigroup Monte Carlo neutron transport for 1-D UO₂/MOX assembly slabs, with a finite-difference diffusion reference, flux/current tallies, and Numba acceleration.',
+    tags: ['Python', 'Monte Carlo', 'Diffusion', 'NumPy', 'Numba'],
+    github: 'https://github.com/dannySchantz/1-D-Fission-Reactor-MC',
+    external: null,
+    href: '/1dMC',
+    featured: true,
+  },
   {
     title: 'Physics-Informed Neural Networks for Plasma Physics',
     description:
@@ -10,6 +31,7 @@ const projects = [
     tags: ['Python', 'PyTorch', 'HPC', 'Physics', 'Deep Learning'],
     github: null,
     external: null,
+    href: null,
     featured: true,
   },
   {
@@ -19,6 +41,7 @@ const projects = [
     tags: ['Research', 'Education', 'Science Communication'],
     github: 'https://github.com/dannySchantz/HardlyHard',
     external: null,
+    href: null,
     featured: true,
   },
   {
@@ -28,7 +51,8 @@ const projects = [
     tags: ['Machine Learning', 'Plasma Physics', 'Numerical Methods'],
     github: null,
     external: null,
-    featured: true,
+    href: null,
+    featured: false,
   },
   {
     title: 'Full-Stack Web Application',
@@ -37,6 +61,7 @@ const projects = [
     tags: ['JavaScript', 'React', 'Node.js', 'Full-Stack'],
     github: 'https://github.com/dannySchantz/final-project-frontend',
     external: null,
+    href: null,
     featured: false,
   },
   {
@@ -46,6 +71,7 @@ const projects = [
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
     github: 'https://github.com/dannySchantz/personal-website',
     external: null,
+    href: null,
     featured: false,
   },
   {
@@ -55,6 +81,7 @@ const projects = [
     tags: ['JavaScript', 'Problem Solving', 'Algorithms'],
     github: 'https://github.com/dannySchantz/challenge-elusive-button-javascript',
     external: null,
+    href: null,
     featured: false,
   },
 ];
@@ -63,14 +90,35 @@ function ProjectCard({
   project,
   featured = false,
 }: {
-  project: typeof projects[0];
+  project: Project;
   featured?: boolean;
 }) {
+  const router = useRouter();
+
+  const handleCardActivate = () => {
+    if (project.href) {
+      router.push(project.href);
+    }
+  };
+
   return (
     <div
-      className={`glass rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300 ${
+      role={project.href ? 'link' : undefined}
+      tabIndex={project.href ? 0 : undefined}
+      onClick={project.href ? handleCardActivate : undefined}
+      onKeyDown={
+        project.href
+          ? (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleCardActivate();
+              }
+            }
+          : undefined
+      }
+      className={`glass rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300 h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 ${
         featured ? 'md:col-span-2 lg:col-span-1' : ''
-      }`}
+      } ${project.href ? 'cursor-pointer' : ''}`}
     >
       <div className="p-6 h-full flex flex-col">
         {/* Header */}
@@ -82,6 +130,7 @@ function ProjectCard({
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="GitHub Repository"
               >
@@ -93,6 +142,7 @@ function ProjectCard({
                 href={project.external}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Live Demo"
               >
@@ -119,6 +169,13 @@ function ProjectCard({
             </span>
           ))}
         </div>
+
+        {project.href && (
+          <div className="mt-4 flex items-center gap-2 text-sm text-primary-400 group-hover:text-primary-300 transition-colors">
+            Learn more
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </div>
+        )}
       </div>
     </div>
   );
