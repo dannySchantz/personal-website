@@ -57,8 +57,8 @@ const education = [
     period: 'Aug 2021 – May 2025',
     description: [
       'GPA: 3.47',
-      'Strong foundation in thermodynamics, transport phenomena, and unit operations',
-      'Coursework in reaction engineering, process design, and experimental laboratory methods',
+      'Strong foundation in process design, thermodynamics, and transport phenomena',
+      'Coursework in unit operations, reaction engineering, and experimental laboratory methods',
       'Served as a student supervisor, mentoring peers and building leadership experience',
     ],
   },
