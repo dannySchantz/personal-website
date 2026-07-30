@@ -131,8 +131,8 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Featured <span className="text-gradient">Projects</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gradient mb-4">
+          Featured Projects
         </h2>
         <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
           A selection of my research projects and personal work in computational physics and software development

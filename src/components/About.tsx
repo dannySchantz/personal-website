@@ -29,8 +29,8 @@ export default function About() {
   return (
     <section id="about" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          About <span className="text-gradient">Me</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gradient mb-4">
+          About Me
         </h2>
         <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
           Bridging the gap between theoretical physics and computational solutions
@@ -56,22 +56,22 @@ export default function About() {
           {/* Text Content */}
           <div className="space-y-6">
             <p className="text-gray-300 text-lg leading-relaxed">
-              I&apos;m a <span className="text-white font-medium">Nuclear Engineering graduate student</span> at 
-              the University of Florida with a background in Chemical Engineering. My research focuses on 
-              developing innovative computational methods to solve complex problems in plasma physics.
+              I&apos;m a Nuclear Engineering graduate student at the University of Florida with a
+              background in Chemical Engineering. My research focuses on developing innovative
+              computational methods to solve complex problems in plasma physics.
             </p>
             
             <p className="text-gray-300 text-lg leading-relaxed">
-              Currently, I work as a <span className="text-primary-400">Research Assistant</span> in the 
-              Plasma and Fusion Group, where I develop <span className="text-white font-medium">Physics-Informed 
-              Neural Networks (PINNs)</span> to solve the relativistic Fokker-Planck equation. I leverage 
-              UF&apos;s HiPerGator HPC resources for large-scale model training.
+              Currently, I work as a Research Assistant in the Plasma and Fusion Group, where I
+              develop Physics-Informed Neural Networks (PINNs) to solve the relativistic
+              Fokker-Planck equation. I leverage UF&apos;s HiPerGator HPC resources for large-scale
+              model training.
             </p>
 
             <p className="text-gray-300 text-lg leading-relaxed">
-              My work combines deep expertise in <span className="text-accent-400">plasma physics</span> with 
-              cutting-edge machine learning techniques to predict primary runaway electron formation rates 
-              and model Dreicer generation mechanisms.
+              My work combines deep expertise in plasma physics with cutting-edge machine learning
+              techniques to predict primary runaway electron formation rates and model Dreicer
+              generation mechanisms.
             </p>
 
             <div className="pt-4">
