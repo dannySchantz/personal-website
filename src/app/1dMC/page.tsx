@@ -193,22 +193,22 @@ export default function OneDMonteCarloPage() {
           <section className="mb-16">
             <h2 className="text-2xl font-semibold text-white mb-4">Tech stack</h2>
             <ul className="space-y-3 text-gray-400">
-              <li className="flex items-start gap-3">
-                <span className="text-primary-500 mt-1.5">▹</span>
+              <li className="grid grid-cols-[1rem_minmax(0,1fr)] gap-x-3 leading-relaxed">
+                <span className="text-primary-500 text-center leading-relaxed select-none" aria-hidden="true">▹</span>
                 <span>
                   <span className="text-gray-300">Python</span> — Monte Carlo and
                   diffusion solvers, input parsing, analysis CLIs
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-primary-500 mt-1.5">▹</span>
+              <li className="grid grid-cols-[1rem_minmax(0,1fr)] gap-x-3 leading-relaxed">
+                <span className="text-primary-500 text-center leading-relaxed select-none" aria-hidden="true">▹</span>
                 <span>
                   <span className="text-gray-300">NumPy / Numba</span> — array tallies
                   and optional JIT particle tracking
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-primary-500 mt-1.5">▹</span>
+              <li className="grid grid-cols-[1rem_minmax(0,1fr)] gap-x-3 leading-relaxed">
+                <span className="text-primary-500 text-center leading-relaxed select-none" aria-hidden="true">▹</span>
                 <span>
                   <span className="text-gray-300">Matplotlib</span> — flux, current,
                   and convergence diagnostics
