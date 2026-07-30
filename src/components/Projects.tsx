@@ -15,11 +15,11 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: '1-D Monte Carlo Neutron Transport',
+    title: '1-D Fission Reactor Monte Carlo',
     description:
-      'A Python Monte Carlo solver for one-dimensional neutron transport. Tracks particle histories to estimate flux, transmission, and reflection in slab geometries.',
-    tags: ['Python', 'Monte Carlo', 'Neutron Transport', 'NumPy'],
-    github: null,
+      'Multigroup Monte Carlo neutron transport for 1-D UO₂/MOX assembly slabs, with a finite-difference diffusion reference, flux/current tallies, and Numba acceleration.',
+    tags: ['Python', 'Monte Carlo', 'Diffusion', 'NumPy', 'Numba'],
+    github: 'https://github.com/dannySchantz/1-D-Fission-Reactor-MC',
     external: null,
     href: '/1dMC',
     featured: true,

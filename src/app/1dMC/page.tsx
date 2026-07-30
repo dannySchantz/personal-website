@@ -1,65 +1,67 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, Atom, Code2, Layers, Target } from 'lucide-react';
+import { ArrowLeft, Atom, Code2, Github, Layers, Target } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: '1-D Monte Carlo Neutron Transport | Danny Schantz',
+  title: '1-D Fission Reactor Monte Carlo | Danny Schantz',
   description:
-    'A Python Monte Carlo solver for one-dimensional neutron transport in slab geometries — particle tracking, tallies, and transport estimates.',
+    'Multigroup 1-D Monte Carlo neutron transport with a finite-difference diffusion reference for UO₂/MOX assembly slab geometries.',
   openGraph: {
-    title: '1-D Monte Carlo Neutron Transport | Danny Schantz',
+    title: '1-D Fission Reactor Monte Carlo | Danny Schantz',
     description:
-      'A Python Monte Carlo solver for one-dimensional neutron transport in slab geometries.',
+      'Multigroup 1-D Monte Carlo neutron transport with a finite-difference diffusion reference.',
     type: 'article',
     url: 'https://dannyschantz.com/1dMC',
   },
 };
 
+const REPO_URL = 'https://github.com/dannySchantz/1-D-Fission-Reactor-MC';
+
 const highlights = [
   {
     icon: Atom,
-    title: 'Particle Tracking',
+    title: 'Monte Carlo k-eigenvalue',
     description:
-      'Simulates individual neutron histories through a 1-D slab, sampling free paths and interaction outcomes.',
+      'History-based particle tracking with fission-source iteration, track-length flux tallies, and surface current scoring.',
   },
   {
     icon: Target,
-    title: 'Tallies & Estimates',
+    title: 'Diffusion reference',
     description:
-      'Accumulates transmission, reflection, and flux estimators with statistical uncertainty from many histories.',
+      'Paired multigroup finite-difference diffusion solver with power iteration for verification and mesh studies.',
   },
   {
     icon: Layers,
-    title: 'Slab Geometry',
+    title: 'Assembly slab geometry',
     description:
-      'Models layered materials with position-dependent cross sections across a one-dimensional domain.',
+      '1-D pin-cell / assembly models with UO₂ and MOX fuels, water, and control-rod materials in 2- and 7-group libraries.',
   },
   {
     icon: Code2,
-    title: 'Python Stack',
+    title: 'Python + Numba',
     description:
-      'Built with Python, NumPy for vectorized sampling, and Matplotlib for flux and convergence plots.',
+      'NumPy-based core with optional Numba kernels for faster tracking, plus Matplotlib analysis scripts.',
   },
 ];
 
 const methods = [
   {
-    title: 'Source sampling',
-    body: 'Neutrons are born from a defined source (e.g. isotropic or beam-like) with an initial position and direction cosine μ.',
+    title: 'Fission birth & banking',
+    body: 'Generations start from a fuel-region guess, then from a fission bank. Each history samples position, energy group (χ), and direction cosine μ.',
   },
   {
-    title: 'Free-flight sampling',
-    body: 'The distance to the next collision is sampled from an exponential distribution using the total macroscopic cross section Σ_t.',
+    title: 'Free flight & collisions',
+    body: 'Path lengths are sampled from Σ_t. Particles either collide in a mesh (capture, fission, in-scatter, or down-scatter) or cross mesh / material interfaces.',
   },
   {
-    title: 'Collision treatment',
-    body: 'At each interaction, absorption or scatter is chosen from material probabilities; scatters update direction before the history continues.',
+    title: 'Boundaries & tallies',
+    body: 'Reflective or vacuum faces are applied per energy group. Track-length flux and signed surface currents accumulate every generation.',
   },
   {
-    title: 'Boundary & scoring',
-    body: 'Histories that leave left or right faces contribute to reflection or transmission tallies; track-length or collision estimators score flux in bins.',
+    title: 'k-effective estimate',
+    body: 'k is the fission-bank size over histories per generation. Inactive generations are skipped before averaging active-generation statistics.',
   },
 ];
 
@@ -82,16 +84,16 @@ export default function OneDMonteCarloPage() {
             Computational Nuclear Engineering
           </p>
           <h1 className="text-3xl md:text-5xl font-bold text-gradient mb-6">
-            1-D Monte Carlo Neutron Transport
+            1-D Fission Reactor Monte Carlo
           </h1>
           <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8 max-w-3xl">
-            A from-scratch Python Monte Carlo code that transports neutrons through a
-            one-dimensional slab, estimates leakage and flux, and demonstrates the
-            statistical foundations of particle transport methods used in reactor analysis.
+            A multigroup Monte Carlo neutron transport code for one-dimensional
+            fission-reactor slabs — with a finite-difference diffusion solver for
+            reference solutions, flux/current plots, and convergence studies.
           </p>
 
-          <div className="flex flex-wrap gap-2 mb-16">
-            {['Python', 'Monte Carlo', 'Neutron Transport', 'NumPy', 'Matplotlib'].map(
+          <div className="flex flex-wrap items-center gap-3 mb-16">
+            {['Python', 'Monte Carlo', 'Diffusion', 'NumPy', 'Numba', 'Matplotlib'].map(
               (tag) => (
                 <span
                   key={tag}
@@ -101,24 +103,31 @@ export default function OneDMonteCarloPage() {
                 </span>
               )
             )}
+            <a
+              href={REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-primary-400 hover:text-primary-300 transition-colors ml-1"
+            >
+              <Github className="w-4 h-4" />
+              View on GitHub
+            </a>
           </div>
 
           <section className="mb-16">
             <h2 className="text-2xl font-semibold text-white mb-4">Overview</h2>
             <div className="space-y-4 text-gray-400 leading-relaxed">
               <p>
-                Monte Carlo methods solve the neutron transport equation by simulating
-                large numbers of random particle histories rather than discretizing the
-                integro-differential Boltzmann equation directly. In one dimension, the
-                geometry collapses to a slab (or stack of slabs) along{' '}
-                <span className="text-gray-300 font-mono">x</span>, which makes the
-                algorithm transparent while still capturing the essential physics:
-                streaming, collision, absorption, and scatter.
+                This project solves multigroup neutron transport in a 1-D assembly
+                geometry representing UO₂ and MOX pin lattices. The Monte Carlo
+                solver tracks individual neutron histories generation by generation
+                to estimate k-effective, group fluxes, and currents.
               </p>
               <p>
-                This project implements that workflow in Python — sampling paths,
-                applying material interactions, and tallying quantities of interest with
-                accompanying statistical error bars as the number of histories grows.
+                A companion finite-difference diffusion eigenvalue solver provides
+                deterministic reference solutions on the same mesh and cross-section
+                data — useful for verification, mesh refinement studies, and
+                comparing transport versus diffusion behavior.
               </p>
             </div>
           </section>
@@ -144,10 +153,9 @@ export default function OneDMonteCarloPage() {
           </section>
 
           <section className="mb-16">
-            <h2 className="text-2xl font-semibold text-white mb-4">Method</h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">Monte Carlo method</h2>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Each neutron history follows a simple loop until it is absorbed or escapes
-              the domain:
+              Each generation follows the classic fission-source iteration loop:
             </p>
             <ol className="space-y-6">
               {methods.map((step, index) => (
@@ -165,22 +173,19 @@ export default function OneDMonteCarloPage() {
           </section>
 
           <section className="mb-16">
-            <h2 className="text-2xl font-semibold text-white mb-4">
-              Why one dimension first
-            </h2>
+            <h2 className="text-2xl font-semibold text-white mb-4">Problem setups</h2>
             <div className="glass rounded-xl p-6 md:p-8 space-y-4 text-gray-400 leading-relaxed">
               <p>
-                A 1-D slab is the classic teaching and verification problem for Monte
-                Carlo transport: the geometry is simple enough to reason about by hand,
-                yet rich enough to compare against analytic solutions (pure absorbers,
-                isotropic scattering slabs) and deterministic discrete-ordinates
-                benchmarks.
+                Input decks cover <span className="text-gray-300">2-group</span> and{' '}
+                <span className="text-gray-300">7-group</span> cross sections with
+                configurations such as UO₂–UO₂, MOX–MOX, and UO₂–MOX assembly pairs.
+                Mesh density is controlled by meshes-per-fuel-rod and
+                meshes-per-water-rod settings in the deck.
               </p>
               <p>
-                Building the solver this way also sets up natural extensions — energy
-                groups, anisotropic scatter, variance reduction, and eventually
-                multi-dimensional geometries — without losing sight of how each random
-                sample contributes to a physical estimate.
+                Analysis scripts plot power-normalized fluxes and currents, run mesh
+                / generation convergence studies, collapse 7-group results to 2-group,
+                and explore extra configurations (reflectors, control rods).
               </p>
             </div>
           </section>
@@ -191,22 +196,22 @@ export default function OneDMonteCarloPage() {
               <li className="flex items-start gap-3">
                 <span className="text-primary-500 mt-1.5">▹</span>
                 <span>
-                  <span className="text-gray-300">Python</span> — core simulation loop
-                  and history management
+                  <span className="text-gray-300">Python</span> — Monte Carlo and
+                  diffusion solvers, input parsing, analysis CLIs
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary-500 mt-1.5">▹</span>
                 <span>
-                  <span className="text-gray-300">NumPy</span> — random sampling and
-                  array-based tallies
+                  <span className="text-gray-300">NumPy / Numba</span> — array tallies
+                  and optional JIT particle tracking
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary-500 mt-1.5">▹</span>
                 <span>
-                  <span className="text-gray-300">Matplotlib</span> — flux profiles,
-                  leakage estimates, and convergence diagnostics
+                  <span className="text-gray-300">Matplotlib</span> — flux, current,
+                  and convergence diagnostics
                 </span>
               </li>
             </ul>
@@ -214,18 +219,20 @@ export default function OneDMonteCarloPage() {
 
           <div className="glass rounded-xl p-6 md:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h2 className="text-white font-semibold mb-1">Want to dig deeper?</h2>
+              <h2 className="text-white font-semibold mb-1">See the code</h2>
               <p className="text-gray-400 text-sm">
-                Reach out if you&apos;d like to discuss the implementation or related
-                transport work.
+                Full solvers, input decks, and plotting scripts are on GitHub.
               </p>
             </div>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-lg bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:opacity-90 transition-opacity"
+            <a
+              href={REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-lg bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:opacity-90 transition-opacity"
             >
-              Get in touch
-            </Link>
+              <Github className="w-4 h-4" />
+              Open repository
+            </a>
           </div>
         </div>
       </article>
