@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Danny Schantz — Nuclear Engineering, University of Florida',
+    name: 'Danny Schantz | Nuclear Engineering, University of Florida',
     short_name: 'Danny Schantz',
     description:
       'Personal website and CV of Danny Schantz, nuclear engineering graduate student at the University of Florida.',

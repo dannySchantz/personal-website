@@ -1,4 +1,4 @@
-# Danny Schantz — Personal Website
+# Danny Schantz: Personal Website
 
 A personal academic homepage that reads like a typeset CV, not like a template.
 
@@ -19,7 +19,7 @@ templates) rather than a marketing-landing layout:
   right-aligned rail label and a hairline spine; dates in a left column;
   reverse-chronological education and appointments; skills as definition
   lists rather than tag pills.
-- **No cards where a list will do** — no glassmorphism, gradient headlines,
+- **No cards where a list will do**: no glassmorphism, gradient headlines,
   floating orbs, icon grids, or hover glows.
 - **Prints as a CV**: the print stylesheet flattens the theme to black on
   white, hides chrome, and avoids page breaks inside entries. The masthead's
@@ -29,24 +29,24 @@ templates) rather than a marketing-landing layout:
 
 All facts, dates, links, and copy live in one file:
 
-- `src/data/profile.ts` — edit this to update the site.
+- `src/data/profile.ts`: edit this to update the site.
 
 Everything else (components, styles) is presentation only.
 
 ### Structure
 
-- `src/components/Section.tsx` — the rail-label + spine section shell.
-- `src/components/Masthead.tsx` — name, role, contact link line, double rule.
+- `src/components/Section.tsx`: the rail-label + spine section shell.
+- `src/components/Masthead.tsx`: name, role, contact link line, double rule.
 - `src/components/About.tsx`, `Research.tsx`, `Projects.tsx`, `Experience.tsx`,
-  `Skills.tsx`, `Contact.tsx` — one file per CV section.
-- `src/app/1dMC/page.tsx` — long-form project page for the 1-D fission reactor
+  `Skills.tsx`, `Contact.tsx`: one file per CV section.
+- `src/app/1dMC/page.tsx`: long-form project page for the 1-D fission reactor
   Monte Carlo code, in the same typographic system.
-- `src/app/globals.css` — palette tokens (CSS custom properties) and print
+- `src/app/globals.css`: palette tokens (CSS custom properties) and print
   styles.
-- `tailwind.config.ts` — maps Tailwind utilities onto those tokens.
-- `src/fonts/` — self-hosted woff2 files (served by `next/font/local`, no
+- `tailwind.config.ts`: maps Tailwind utilities onto those tokens.
+- `src/fonts/`: self-hosted woff2 files (served by `next/font/local`, no
   dependency on Google Fonts at build or runtime).
-- `public/og.png` — the Open Graph / link-preview card.
+- `public/og.png`: the Open Graph / link-preview card.
 
 ## Engineering notes
 

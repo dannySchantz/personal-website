@@ -79,7 +79,7 @@ export default function OneDMonteCarloPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
             A multigroup Monte Carlo neutron transport code for one-dimensional
-            fission-reactor slabs — with a finite-difference diffusion solver for
+            fission-reactor slabs, with a finite-difference diffusion solver for
             reference solutions, flux and current plots, and convergence studies.
           </p>
 
@@ -124,7 +124,7 @@ export default function OneDMonteCarloPage() {
             <p>
               A companion finite-difference diffusion eigenvalue solver provides
               deterministic reference solutions on the same mesh and cross-section
-              data — useful for verification, mesh refinement studies, and
+              data, useful for verification, mesh refinement studies, and
               comparing transport versus diffusion behavior.
             </p>
           </div>

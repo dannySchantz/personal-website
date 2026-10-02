@@ -1,6 +1,6 @@
 /**
  * All of the site's content lives here so updates happen in one place.
- * Facts, dates, and links — no styling.
+ * Facts, dates, and links, no styling.
  */
 
 export const profile = {
@@ -36,15 +36,19 @@ export const updates = [
     text: 'Graduated from Calvin University with a B.S. in Chemical Engineering.',
   },
   {
+    date: 'Feb 2025',
+    text: 'Began an Open Avenues research project simulating quantum systems in Python.',
+  },
+  {
     date: 'Jan 2024',
     text: 'Joined Mackinac Technology as a Materials Science R&D intern.',
   },
 ];
 
 export const research = {
-  lead: 'My thesis develops physics-informed neural networks (PINNs) for kinetic plasma physics \u2014 training networks that respect the governing equations, then using them where classical solvers get expensive.',
+  lead: 'My thesis develops physics-informed neural networks (PINNs) for kinetic plasma physics: training networks that respect the governing equations, then using them where classical solvers get expensive.',
   paragraphs: [
-    'Runaway electrons \u2014 relativistic particles that can form during tokamak disruptions \u2014 threaten plasma-facing components, so predicting their formation matters for present and future devices, including spherical tokamaks. Their dynamics are governed by the relativistic Fokker\u2013Planck equation, which couples electric-field acceleration, collisional slowing-down, and pitch-angle scattering.',
+    'Runaway electrons are relativistic particles that can form during tokamak disruptions, and they threaten plasma-facing components, so predicting their formation matters for present and future devices, including spherical tokamaks. Their dynamics are governed by the relativistic Fokker\u2013Planck equation, which couples electric-field acceleration, collisional slowing-down, and pitch-angle scattering.',
     'In the Plasma and Fusion Group I am building a unified PINN framework for Dreicer generation and primary runaway formation rates. The models are trained on UF\u2019s HiPerGator cluster using PyTorch, with deep-learning workflows built around Python and HPC job scheduling.',
   ],
   interests: [
@@ -69,7 +73,7 @@ export const projects: Project[] = [
     kind: 'Thesis',
     title: 'Physics-Informed Neural Networks for Runaway Electrons',
     description:
-      'PINNs that solve the relativistic Fokker\u2013Planck equation to model runaway-electron dynamics in fusion plasmas \u2014 Dreicer generation and primary formation rates in a unified framework, trained at scale on UF HiPerGator.',
+      'PINNs that solve the relativistic Fokker\u2013Planck equation to model runaway-electron dynamics in fusion plasmas: Dreicer generation and primary formation rates in a unified framework, trained at scale on UF HiPerGator.',
     stack: 'Python \u00b7 PyTorch \u00b7 HiPerGator HPC',
   },
   {
@@ -82,10 +86,24 @@ export const projects: Project[] = [
     href: '/1dMC',
   },
   {
+    kind: 'Research',
+    title: 'Quantum Physics Simulation, Open Avenues',
+    description:
+      'Modeled atomic behavior in Python, simulating wave functions and energy states to explore fundamental quantum mechanical principles.',
+    stack: 'Python',
+  },
+  {
+    kind: 'Research',
+    title: 'Sustainable Ferrovanadium Production, Open Avenues',
+    description:
+      'Studied process optimization and environmental impact of ferrovanadium production with a mentor, culminating in a 30-minute presentation to company executives at Phoenix Tailings, Inc.',
+    stack: 'Process optimization',
+  },
+  {
     kind: 'Outreach',
     title: 'HardlyHard',
     description:
-      'Turning difficult-to-understand research into simple, actionable, teachable material \u2014 making complex scientific concepts accessible.',
+      'Turning difficult-to-understand research into simple, actionable, teachable material and making complex scientific concepts accessible.',
     stack: 'Science communication',
     github: 'https://github.com/dannySchantz/HardlyHard',
   },
@@ -151,8 +169,8 @@ export const appointments: Entry[] = [
     organization: 'Plasma and Fusion Group, University of Florida',
     bullets: [
       'Develop physics-informed neural networks that solve plasma-physics partial differential equations, trained on UF HiPerGator HPC resources.',
-      'Design deep-learning workflows in Python and PyTorch to model plasma dynamics in tokamak fusion devices.',
-      'Focus on relativistic electron formation and the evolution of electron distributions.',
+      'Design deep-learning workflows in Python and PyTorch to model plasma dynamics in tokamak fusion devices, with a focus on relativistic electron formation and electron distribution evolution.',
+      'Write Matplotlib scripts for data visualization and validation of neural network output.',
     ],
   },
   {
@@ -161,8 +179,8 @@ export const appointments: Entry[] = [
     organization: 'University of Florida Training Reactor (UFTR)',
     bullets: [
       'Completing the NRC-certified training curriculum in preparation for Reactor Operator licensure.',
-      'Studying reactor systems: radiation detection, thermal-hydraulics, instrumentation, and controls.',
-      'Assist with daily reactor operations as a qualified second person; perform instrumentation maintenance.',
+      'Studying reactor systems: radiation detection, thermal-hydraulics, instrumentation and controls, reactor design, and standard and emergency operating procedures.',
+      'Assist with daily reactor operations as a qualified second person, execute experimental data collection, and perform instrumentation maintenance and repair.',
     ],
   },
   {
@@ -170,9 +188,18 @@ export const appointments: Entry[] = [
     title: 'Materials Science R&D Intern',
     organization: 'Mackinac Technology Company',
     bullets: [
-      'Led experimental design and process optimization for a DOE-funded liquid silicone rubber window project.',
+      'Led experimental design and process optimization for a DOE-funded liquid silicone rubber window project, focused on enhancing tensile strength while maintaining high optical clarity.',
       'Eliminated 99.6% of bubble formation while increasing surface uniformity by 92%.',
-      'Conducted literature reviews and contributed to SBIR grant writing for ongoing research funding.',
+      'Conducted literature reviews on LSR surface and structural modification and contributed to SBIR grant writing for ongoing research funding.',
+    ],
+  },
+  {
+    period: 'Jan 2023 \u2013 May 2025',
+    title: 'Engineering Grader',
+    organization: 'Calvin University',
+    bullets: [
+      'Evaluated coursework and provided academic support for three engineering courses.',
+      'Guided students in identifying and correcting errors, fostering skill development and improved academic performance.',
     ],
   },
 ];
@@ -180,12 +207,12 @@ export const appointments: Entry[] = [
 export const skills = [
   {
     category: 'Languages',
-    items: 'Python, TypeScript, JavaScript, MATLAB',
+    items: 'Python (PyTorch, NumPy, SciPy, Matplotlib, JAX), JavaScript, TypeScript, HTML/CSS, MATLAB',
   },
   {
     category: 'Machine learning',
     items:
-      'PyTorch, physics-informed neural networks, deep learning, large-scale training on HPC',
+      'Physics-informed neural networks, deep learning, large-scale training on HPC',
   },
   {
     category: 'Scientific computing',
@@ -198,8 +225,12 @@ export const skills = [
       'Nuclear engineering, plasma physics, runaway-electron dynamics, chemical engineering, thermodynamics, transport phenomena',
   },
   {
-    category: 'Tools',
-    items: 'Git, Linux, Docker, Jupyter, LaTeX',
+    category: 'HPC & tools',
+    items: 'Linux (Bash), Slurm, Git/GitHub, Docker, Jupyter, LaTeX',
+  },
+  {
+    category: 'Engineering software',
+    items: 'AutoCAD, Inventor, UNISIM',
   },
   {
     category: 'Communication',

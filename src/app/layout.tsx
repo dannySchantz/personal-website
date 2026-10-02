@@ -31,7 +31,7 @@ const mono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://dannyschantz.com'),
   title: {
-    default: 'Danny Schantz — Nuclear Engineering, University of Florida',
+    default: 'Danny Schantz | Nuclear Engineering, University of Florida',
     template: '%s · Danny Schantz',
   },
   description:
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Danny Schantz — Nuclear Engineering, University of Florida',
+    title: 'Danny Schantz | Nuclear Engineering, University of Florida',
     description:
       'Graduate student in nuclear engineering at the University of Florida, working on physics-informed machine learning for fusion plasmas.',
     type: 'website',
@@ -62,13 +62,13 @@ export const metadata: Metadata = {
         url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'Danny Schantz — Nuclear Engineering, University of Florida',
+        alt: 'Danny Schantz | Nuclear Engineering, University of Florida',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Danny Schantz — Nuclear Engineering, University of Florida',
+    title: 'Danny Schantz | Nuclear Engineering, University of Florida',
     description:
       'Graduate student in nuclear engineering at the University of Florida, working on physics-informed machine learning for fusion plasmas.',
     images: ['/og.png'],

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ---------------------------------------------------------------------------
- * Palette — a warm paper light theme and a warm graphite dark theme.
+ * Palette: a warm paper light theme and a warm graphite dark theme.
  * Every component reads from these variables, so the whole site re-themes
  * by toggling the `dark` class on <html>.
  * ------------------------------------------------------------------------- */
@@ -115,7 +115,7 @@
 }
 
 /* ---------------------------------------------------------------------------
- * Print styles — this page doubles as a CV, so printing it should produce
+ * Print styles: this page doubles as a CV, so printing it should produce
  * a clean, single-ink document.
  * ------------------------------------------------------------------------- */
 
