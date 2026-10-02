@@ -2,75 +2,167 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* ---------------------------------------------------------------------------
+ * Palette: a warm paper light theme and a warm graphite dark theme.
+ * Every component reads from these variables, so the whole site re-themes
+ * by toggling the `dark` class on <html>.
+ * ------------------------------------------------------------------------- */
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 10, 10, 20;
-  --background-end-rgb: 15, 15, 30;
+  color-scheme: light;
+  --bg: #faf9f5;
+  --bg-subtle: #f2f0e8;
+  --surface: #fffefb;
+  --ink: #201f1b;
+  --ink-soft: #43403a;
+  --muted: #6d685c;
+  --faint: #97917f;
+  --line: #e5e1d5;
+  --line-strong: #cfc9b8;
+  --accent: #822f33;
+  --accent-strong: #632226;
+  --accent-soft: #f3e7e4;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.dark {
+  color-scheme: dark;
+  --bg: #17171a;
+  --bg-subtle: #1d1d21;
+  --surface: #1e1e23;
+  --ink: #e9e6dd;
+  --ink-soft: #c9c5b9;
+  --muted: #9a9587;
+  --faint: #726d5f;
+  --line: #2b2b30;
+  --line-strong: #3d3d44;
+  --accent: #d99a8f;
+  --accent-strong: #e7bcb3;
+  --accent-soft: #2e2322;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb))
-  );
-  min-height: 100vh;
-}
-
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400;
+@layer base {
+  html {
+    scroll-padding-top: 5.5rem;
   }
-  
-  .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
-  
-  .glow-border {
-    @apply relative;
+
+  body {
+    @apply bg-paper font-serif text-ink antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga', 'kern';
   }
-  
-  .glow-border::before {
-    content: '';
-    @apply absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg opacity-0 blur transition-opacity duration-300;
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--ink);
   }
-  
-  .glow-border:hover::before {
-    @apply opacity-75;
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
   }
 }
 
-::selection {
-  background-color: rgba(59, 130, 246, 0.3);
-  color: white;
+@layer components {
+  /* Inline text links: underlined in a light tint of the accent, full
+     accent on hover. No color-only affordance. */
+  .prose-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+    transition: text-decoration-color 120ms ease, color 120ms ease;
+  }
+  .prose-link:hover {
+    text-decoration-color: var(--accent);
+  }
+
+  /* The letterhead-style double rule used under the masthead and around
+     the call-to-action on project pages. */
+  .rule-double {
+    border: 0;
+    border-bottom: 4px double var(--line-strong);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+  }
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* ---------------------------------------------------------------------------
+ * Print styles: this page doubles as a CV, so printing it should produce
+ * a clean, single-ink document.
+ * ------------------------------------------------------------------------- */
 
-::-webkit-scrollbar-track {
-  background: rgb(15, 15, 30);
-}
+@media print {
+  @page {
+    margin: 1.6cm;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.5);
-  border-radius: 4px;
-}
+  :root,
+  .dark {
+    --bg: #ffffff;
+    --bg-subtle: #ffffff;
+    --surface: #ffffff;
+    --ink: #111111;
+    --ink-soft: #222222;
+    --muted: #333333;
+    --faint: #555555;
+    --line: #bbbbbb;
+    --line-strong: #888888;
+    --accent: #7d2e32;
+    --accent-strong: #7d2e32;
+    --accent-soft: #eeeeee;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.7);
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    font-size: 11.5pt;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  section {
+    scroll-margin-top: 0;
+  }
+
+  [data-print-avoid-break] {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }
