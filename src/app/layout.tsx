@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
+import { profile } from '@/data/profile';
 import './globals.css';
 
 /* Self-hosted fonts (no runtime or build-time dependency on Google Fonts). */
@@ -100,7 +101,7 @@ const personJsonLd = {
   '@type': 'Person',
   name: 'Danny Schantz',
   url: 'https://dannyschantz.com',
-  email: 'mailto:danny.schantz@ufl.edu',
+  email: [`mailto:${profile.email}`, `mailto:${profile.personalEmail}`],
   jobTitle: 'Graduate Research Assistant',
   description:
     'Nuclear engineering graduate student at the University of Florida, working on physics-informed neural networks for fusion plasma physics.',
