@@ -14,7 +14,7 @@ templates) rather than a marketing-landing layout:
   by a toggle (persisted, respects `prefers-color-scheme`, no flash on load).
 - **Two typefaces**, self-hosted: Source Serif 4 for body and headings,
   IBM Plex Mono for dates, labels, and metadata.
-- **CV structure**: masthead with name and an `Email / GitHub / LinkedIn /
+- **CV structure**: masthead with name and an `Institutional email / Personal email / GitHub / LinkedIn /
   CV / Print` link line over a letterhead double rule; sections with a
   right-aligned rail label and a hairline spine; dates in a left column;
   reverse-chronological education and appointments; skills as definition
@@ -85,6 +85,7 @@ This repository's working branches follow Vercel's configuration; merge to
 
 ## Contact
 
-- **Email**: danny.schantz@ufl.edu
+- **Institutional email**: [daniel.schantz@ufl.edu](mailto:daniel.schantz@ufl.edu)
+- **Personal email**: [dannyschantz1@icloud.com](mailto:dannyschantz1@icloud.com)
 - **LinkedIn**: [linkedin.com/in/dannyschantz](https://linkedin.com/in/dannyschantz)
 - **GitHub**: [github.com/dannySchantz](https://github.com/dannySchantz)

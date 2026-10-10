@@ -18,7 +18,11 @@ export default function Masthead() {
 
         <p className="mt-8 font-mono text-[13px] text-muted">
           <a href={`mailto:${profile.email}`} className="prose-link">
-            Email
+            Institutional email
+          </a>
+          {separator}
+          <a href={`mailto:${profile.personalEmail}`} className="prose-link">
+            Personal email
           </a>
           {separator}
           <a href={profile.github} target="_blank" rel="noopener noreferrer" className="prose-link">

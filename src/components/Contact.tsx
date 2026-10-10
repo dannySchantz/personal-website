@@ -11,8 +11,20 @@ export default function Contact() {
       </p>
 
       <p className="mt-8 text-2xl md:text-3xl">
+        <span className="mb-2 block font-mono text-xs uppercase tracking-[0.14em] text-faint">
+          Institutional email
+        </span>
         <a href={`mailto:${profile.email}`} className="prose-link">
           {profile.email}
+        </a>
+      </p>
+
+      <p className="mt-6 text-2xl md:text-3xl">
+        <span className="mb-2 block font-mono text-xs uppercase tracking-[0.14em] text-faint">
+          Personal email
+        </span>
+        <a href={`mailto:${profile.personalEmail}`} className="prose-link">
+          {profile.personalEmail}
         </a>
       </p>
 
