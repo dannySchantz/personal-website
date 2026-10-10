@@ -85,7 +85,9 @@ This repository's working branches follow Vercel's configuration; merge to
 
 ## Contact
 
-- **Institutional email**: [daniel.schantz@ufl.edu](mailto:daniel.schantz@ufl.edu)
-- **Personal email**: [dannyschantz1@icloud.com](mailto:dannyschantz1@icloud.com)
+For institutional and personal email addresses, see the site's
+[Contact section](https://dannyschantz.com/#contact), sourced from
+[`profile.email` and `profile.personalEmail`](src/data/profile.ts).
+
 - **LinkedIn**: [linkedin.com/in/dannyschantz](https://linkedin.com/in/dannyschantz)
 - **GitHub**: [github.com/dannySchantz](https://github.com/dannySchantz)
